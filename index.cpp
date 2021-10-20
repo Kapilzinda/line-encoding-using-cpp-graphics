@@ -110,7 +110,8 @@ void NRZL(string s)
         }
         x=x+50;
     }
-    outtextxy(0,150,"amplitude");
+    outtextxy(0,75,"NRZL");
+    outtextxy(0,115,"input");
 
 }
 void NRZI(string s)
@@ -162,7 +163,8 @@ void NRZI(string s)
         
 
        }}
-    outtextxy(0,150,"amplitude");
+    outtextxy(0,75,"NRZL");
+    outtextxy(0,115,"input");
 }
 void MANCHESTER(string s)
 {
@@ -200,8 +202,8 @@ void MANCHESTER(string s)
         }
         x=x+50;
     }
-
-    outtextxy(0,150,"amplitude");
+    outtextxy(0,125,"MANCHESTER");
+    outtextxy(0,215,"input");
 
 }
 void DIFMANCHESTER(string s)
@@ -267,7 +269,8 @@ void DIFMANCHESTER(string s)
 	        x=x+50;
     	}
 	}
-    outtextxy(0,200,"amplitude");
+    outtextxy(0,125,"DIFMANCHESTER");
+    outtextxy(0,215,"input");
 }
 void AMI(string s)
 {
@@ -301,7 +304,6 @@ void AMI(string s)
         }
         x=x+50;
     }
-    outtextxy(0,150,"amplitude");
 }
 void B8ZS(string s,int &flag1,int &x)
 {
@@ -343,7 +345,6 @@ void B8ZS(string s,int &flag1,int &x)
         x=x+50;
     }
     flag1=flag;
-    outtextxy(0,150,"amplitude");
         }
 void AMIB8ZS(string s)
 {
@@ -397,7 +398,6 @@ void AMIB8ZS(string s)
         }
         x=x+50;
     }
-    outtextxy(0,150,"amplitude");
     }
 }
 void HDB3(string s,int &flag1,int &x,int sum)
@@ -407,9 +407,8 @@ void HDB3(string s,int &flag1,int &x,int sum)
     for(int i=0;i<n;i++)
     {   if(sum%2==0)
         {if(i==0||i==3)
-         {
              flag=flag1;
-         }}
+			 }
          else
          {if(i==3)
            {if(flag1==0)
@@ -442,7 +441,6 @@ void HDB3(string s,int &flag1,int &x,int sum)
         x=x+50;
     }
     flag1=flag;
-    outtextxy(0,150,"amplitude");
 
 }
 void AMIHDB3(string s)
@@ -483,7 +481,6 @@ void AMIHDB3(string s)
         }
         x=x+50;
     }
-    outtextxy(0,150,"amplitude");
 }
 int main()
 {
@@ -543,17 +540,24 @@ int main()
         {
             cout<<"Type of scrambling:\n1)B8ZS\n2)HDB3" << endl;
             cin>>scramb;
-            if(scramb==1)
-               AMIB8ZS(s);
+            if(scramb==1){
+            	    outtextxy(0,100,"AMI B8ZS");
+    				outtextxy(0,165,"input");
+    				AMIB8ZS(s);
+			}
             else
             {
-              AMIHDB3(s);
+            	outtextxy(0,100,"AMI HDB3");
+    			outtextxy(0,165,"input");
+                AMIHDB3(s);
             }
                
         }
         else
         {
-          AMI(s);
+        	outtextxy(0,100,"AMI");
+    		outtextxy(0,165,"input");
+            AMI(s);
         }
     }
 
